@@ -28,7 +28,7 @@ df_hungry = pd.read_sql("""SELECT name, age, breed FROM dogs WHERE hungry = 1 OR
 df_hungry_ages = pd.read_sql("""SELECT name, age, hungry FROM dogs WHERE hungry = 1 AND age BETWEEN 2 AND 7 ORDER BY name ASC; """, conn2)
 
 # Step 8: Return name, age, breed for 4 oldest dogs, sorted by breed alphabetically
-df_4_oldest = pd.read_sql("SELECT name, age, breed FROM dogs ORDER BY age DESC LIMIT 4", conn2).sort_values(by='breed', ascending=True, ignore_index=True)
+df_4_oldest = pd.read_sql("SELECT name, age, breed FROM dogs ORDER BY age DESC LIMIT 4", conn2)
 
 # Step 9: Return total number of years Babe Ruth played
 df_ruth_years = pd.read_sql("""SELECT COUNT(*) as total_years FROM babe_ruth_stats; """, conn3)
